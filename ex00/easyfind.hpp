@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 17:02:05 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/06/10 17:46:39 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/06/10 20:19:03 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -15,15 +15,14 @@
 
 #include <iostream>
 #include <algorithm>
-#include <exception>
 #include <stdexcept>
 
 template <typename T>
-bool    easyfind(T const& container, int x) {
+bool    easyfind(T& container, int x) {
     try {
-        typename T::iterator found
+        typename T::iterator itr
             = std::find(container.begin(), container.end(), x);
-        if (found == container.end())
+        if (itr == container.end())
             throw std::runtime_error("Not found!");
         return  (true);
     }
